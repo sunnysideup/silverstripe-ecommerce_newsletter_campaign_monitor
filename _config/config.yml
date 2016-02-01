@@ -1,0 +1,13 @@
+---
+Name: ecommerce_newsletter_campaign_monitor
+Before: 'mysite/*'
+After: 'framework/*','cms/*','ecommerce/*'
+---
+OrderFormAddress:
+  extensions:
+    - EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes
+
+EcommerceDBConfig:
+  extensions:
+    - EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes
+
