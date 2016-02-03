@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes" namespace="" name="EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes" abstract="false" final="false" start="4" end="70">
+  <file path="/var/www/3.2.photowarehouse.co.nz/ecommerce_newsletter_campaign_monitor/code/extensions" file="NewsletterCampaignMonitorSignupDecoratorConfigFixes.php" realpath="/var/www/3.2.photowarehouse.co.nz/ecommerce_newsletter_campaign_monitor/code/extensions/NewsletterCampaignMonitorSignupDecoratorConfigFixes.php" size="2307" time="2016-02-02T15:17:59+13:00" unixtime="1454379479" sha1="532ef799127ffdd52682f06c11eb247206b0a962" relative="code/extensions/NewsletterCampaignMonitorSignupDecoratorConfigFixes.php"/>
+  <extends full="DataExtension" namespace="" name="DataExtension" unresolved="true"/>
+  <member name="db" type="array" default="" visibility="private" static="true" line="6"/>
+  <member name="has_one" type="array" default="" visibility="private" static="true" line="12"/>
+  <method name="onBeforeWrite" start="16" end="22" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="updateCMSFields" start="24" end="68" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="fields" byreference="false" type="object">
+      <type full="FieldList" namespace="" name="FieldList"/>
+    </parameter>
+  </method>
+</class>

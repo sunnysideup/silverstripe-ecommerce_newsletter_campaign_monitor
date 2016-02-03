@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<source xmlns="http://xml.phpdox.net/src">
+  <dir name="/var/www/3.2.photowarehouse.co.nz/ecommerce_newsletter_campaign_monitor">
+    <file name="_config.php" size="6" time="2016-02-02T15:17:59+13:00" unixtime="1454379479" sha1="10ecb38ffc99bee1f8be94f945b8a87a71faef9c" xml="tokens/_config.php.xml"/>
+    <dir name="code">
+      <dir name="extensions">
+        <file name="NewsletterCampaignMonitorSignupDecoratorFormFixes.php" size="5334" time="2016-02-03T12:53:19+13:00" unixtime="1454457199" sha1="6ab8578693112e7c68ec7170ce12c1d2bebbb34b" xml="tokens/code/extensions/NewsletterCampaignMonitorSignupDecoratorFormFixes.php.xml"/>
+        <file name="NewsletterCampaignMonitorSignupDecoratorConfigFixes.php" size="2307" time="2016-02-02T15:17:59+13:00" unixtime="1454379479" sha1="532ef799127ffdd52682f06c11eb247206b0a962" xml="tokens/code/extensions/NewsletterCampaignMonitorSignupDecoratorConfigFixes.php.xml"/>
+      </dir>
+    </dir>
+  </dir>
+</source>
