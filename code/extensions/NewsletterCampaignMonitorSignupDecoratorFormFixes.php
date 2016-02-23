@@ -32,10 +32,12 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
 			if($page->ReadyToReceiveSubscribtions()) {
 				// Create fields
 				$member = Member::currentUser();
+				$api = $this->getAPI();
 				$currentValues = $api->getSubscriber($page->ListID, $member);
 					if(!$currentValues) {
-					$emailField = null;
-					$emailRequired = true;
+						$emailField = null;
+						$emailRequired = true;
+					}
 					if(!$member) {
 						$member = new Member();
 					}
