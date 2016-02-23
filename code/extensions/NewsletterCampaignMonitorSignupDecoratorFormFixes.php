@@ -34,37 +34,36 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
 				$member = Member::currentUser();
 				$api = $this->getAPI();
 				$currentValues = $api->getSubscriber($page->ListID, $member);
-					if(!$currentValues) {
-						$emailField = null;
-						$emailRequired = true;
-					}
-					if(!$member) {
-						$member = new Member();
-					}
-					$signupField = $member->getCampaignMonitorSignupField($page->ListID, "SubscribeChoice");
-					$fieldsToHide = Config::inst()->get("EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes", "fields_to_hide");
-					foreach($fieldsToHide as $field) {
-						Requirements::customCSS("#CMCustomField".$field." {display: none;}");
-					}
-					$config = EcommerceDBConfig::current_ecommerce_db_config();
-					if($config->CampaignMonitorSignupHeader) {
-						$fields->push(new HeaderField("CampaignMonitorNewsletterSignupHeader", $config->CampaignMonitorSignupHeader, 3));
-					}
-					if($config->CampaignMonitorSignupIntro) {
-						$fields->push(new LiteralField("CampaignMonitorNewsletterSignupContent", "<p class=\"campaignMonitorNewsletterSignupContent\">".$config->CampaignMonitorSignupIntro."</p>"));
-					}
-					$label = $config->CampaignMonitorSignupLabel;
-					if(!$label) {
-						$label = _t("EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes.JOIN", "Join");
-					}
-					$fields->push(new CheckboxField("CampaignMonitorNewsletterSubscribeCheckBox", $config->CampaignMonitorSignupLabel));
-					$fields->push($signupField);
-					Requirements::customCSS("
-						#SubscribeChoice {display: none;}
-						.CMFieldsCustomFieldsHolder {display: none;}
-					");
-					Requirements::customScript("jQuery(\"#CampaignMonitorNewsletterSubscribeCheckBox\").on(\"change\", function(){jQuery(\".CMFieldsCustomFieldsHolder\").slideToggle();});");
+				if(!$currentValues) {
+					$emailField = null;
+					$emailRequired = true;
 				}
+				if(!$member) {
+					$member = new Member();
+				}
+				$signupField = $member->getCampaignMonitorSignupField($page->ListID, "SubscribeChoice");
+				$fieldsToHide = Config::inst()->get("EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes", "fields_to_hide");
+				foreach($fieldsToHide as $field) {
+					Requirements::customCSS("#CMCustomField".$field." {display: none;}");
+				}
+				$config = EcommerceDBConfig::current_ecommerce_db_config();
+				if($config->CampaignMonitorSignupHeader) {
+					$fields->push(new HeaderField("CampaignMonitorNewsletterSignupHeader", $config->CampaignMonitorSignupHeader, 3));
+				}
+				if($config->CampaignMonitorSignupIntro) {
+					$fields->push(new LiteralField("CampaignMonitorNewsletterSignupContent", "<p class=\"campaignMonitorNewsletterSignupContent\">".$config->CampaignMonitorSignupIntro."</p>"));
+				}
+				$label = $config->CampaignMonitorSignupLabel;
+				if(!$label) {
+					$label = _t("EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes.JOIN", "Join");
+				}
+				$fields->push(new CheckboxField("CampaignMonitorNewsletterSubscribeCheckBox", $config->CampaignMonitorSignupLabel));
+				$fields->push($signupField);
+				Requirements::customCSS("
+					#SubscribeChoice {display: none;}
+					.CMFieldsCustomFieldsHolder {display: none;}
+				");
+				Requirements::customScript("jQuery(\"#CampaignMonitorNewsletterSubscribeCheckBox\").on(\"change\", function(){jQuery(\".CMFieldsCustomFieldsHolder\").slideToggle();});");
 			}
 		}
 	}
