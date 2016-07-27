@@ -55,15 +55,21 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes extends DataE
 			}
 		}
 		else {
-			$fields->addFieldToTab(
+			$fields->addFieldsToTab(
 				"Root.Newsletter",
-				new LiteralField(
-					"ListExplanation",
-					"<p class=\"message warning\">
-					"._t("EcommerceNewsletterCampaignMonitorSignup.RECOMMENDATION_TO_SETUP", "It is recommended you set up a Campaign Monitor Page with a valid list to subscribe to.")."
-					</p>"
+				array(
+					new LiteralField(
+						"ListExplanation",
+						"<p class=\"message warning\">
+						"._t("EcommerceNewsletterCampaignMonitorSignup.RECOMMENDATION_TO_SETUP", "It is recommended you set up a Campaign Monitor Page with a valid list to subscribe to.")."
+						</p>"
+					),
+					new TextField("CampaignMonitorSignupHeader", _t("EcommerceNewsletterCampaignMonitorSignup.HEADER", "Header")),
+					new TextField("CampaignMonitorSignupIntro", _t("EcommerceNewsletterCampaignMonitorSignup.INTRO", "Intro")),
+					new TextField("CampaignMonitorSignupLabel", _t("EcommerceNewsletterCampaignMonitorSignup.LABEL", "Label"))
 				)
 			);
+			$fields->removeFieldFromTab("Root.Main", "CampaignMonitorSignupPageID");
 		}
 	}
 
