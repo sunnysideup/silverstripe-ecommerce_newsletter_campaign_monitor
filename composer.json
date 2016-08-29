@@ -1,24 +1,30 @@
 {
-	"name": "sunnysideup/ecommerce_newsletter_campaign_monitor",
-	"type": "silverstripe-module",
-	"description": "add a newsletter signup to your e-commerce checkout - specifically for campaign monitor newsletter module",
-	"homepage": "http://www.silverstripe-ecommerce.com",
-	"keywords": ["ecommerce", "e-commerce", "shop", "newsletter","news letter", "silverstripe", "signup to newsletter", "campaign monitor"],
-	"license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
-	"authors":[
-		{
-			"name": "Nicolaas Francken",
-			"homepage": "https://github.com/sunnysideup",
-			"email" : "modules@sunnysideup.co.nz",
-			"role" : "lead developer"
-		}
-	],
-	"require":{
-		"sunnysideup/ecommerce": "dev-master",
-		"sunnysideup/campaignmonitor": "*"
-	},
-	"extra": {
-		"installer-name": "ecommerce_newsletter_campaign_monitor"
-	}
+    "name": "sunnysideup/ecommerce_newsletter_campaign_monitor",
+    "type": "silverstripe-module",
+    "description": "add a newsletter signup to your e-commerce checkout - specifically for campaign monitor newsletter module",
+    "keywords": [
+        "ecommerce",
+        "e-commerce",
+        "shop",
+        "newsletter",
+        "news letter",
+        "silverstripe",
+        "signup to newsletter",
+        "campaign monitor"
+    ],
+    "license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
+    "authors": [
+        {
+            "name": "Nicolaas Francken",
+            "email": "modules@sunnysideup.co.nz",
+            "role": "lead developer"
+        }
+    ],
+    "require": {
+        "sunnysideup/ecommerce": "dev-master",
+        "sunnysideup/campaignmonitor": "*"
+    },
+    "extra": {
+        "installer-name": "ecommerce_newsletter_campaign_monitor"
+    }
 }
-
