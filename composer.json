@@ -3,12 +3,14 @@
     "type": "silverstripe-module",
     "description": "add a newsletter signup to your e-commerce checkout - specifically for campaign monitor newsletter module",
     "keywords": [
+        "Silverstripe-CMS",
+        "CMS",
+        "Silverstripe",
         "ecommerce",
         "e-commerce",
         "shop",
         "newsletter",
         "news letter",
-        "silverstripe",
         "signup to newsletter",
         "campaign monitor"
     ],
@@ -21,8 +23,10 @@
         }
     ],
     "require": {
-        "sunnysideup/ecommerce": "dev-master",
-        "sunnysideup/campaignmonitor": "*"
+        "sunnysideup/ecommerce": "*",
+        "sunnysideup/campaignmonitor": "*",
+        "silverstripe/framework": "~3.1",
+        "silverstripe/cms": "~3.1"
     },
     "extra": {
         "installer-name": "ecommerce_newsletter_campaign_monitor"
