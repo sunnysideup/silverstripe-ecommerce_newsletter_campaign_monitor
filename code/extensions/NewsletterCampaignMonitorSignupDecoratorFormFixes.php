@@ -46,7 +46,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                 $signupField = $member->getCampaignMonitorSignupField($page->ListID, "SubscribeChoice");
                 $fieldsToHide = Config::inst()->get("EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes", "fields_to_hide");
                 foreach ($fieldsToHide as $field) {
-                    Requirements::customCSS("#CMCustomField".$field." {display: none!important;}");
+                    Requirements::customCSS("#CMCustomField".$field." {display: none;}");
                 }
                 $config = EcommerceDBConfig::current_ecommerce_db_config();
                 if ($config->CampaignMonitorSignupHeader) {
@@ -62,8 +62,8 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                 $fields->push(new CheckboxField("CampaignMonitorNewsletterSubscribeCheckBox", $config->CampaignMonitorSignupLabel));
                 $fields->push($signupField);
                 Requirements::customCSS("
-                    #SubscribeChoice {display: none;}
-                    .CMFieldsCustomFieldsHolder {display: none;}
+                    #SubscribeChoice {display: none!important;}
+                    .CMFieldsCustomFieldsHolder {display: none!important;}
                 ");
                 Requirements::customScript("jQuery(\"#CampaignMonitorNewsletterSubscribeCheckBox\").on(\"change\", function(){jQuery(\".CMFieldsCustomFieldsHolder\").slideToggle();});");
             }
