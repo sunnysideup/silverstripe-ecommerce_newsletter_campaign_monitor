@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/var/www/3.2.photowarehouse.co.nz/ecommerce_newsletter_campaign_monitor" file="_config.php" realpath="/var/www/3.2.photowarehouse.co.nz/ecommerce_newsletter_campaign_monitor/_config.php" size="6" time="2016-02-02T15:17:59+13:00" unixtime="1454379479" sha1="10ecb38ffc99bee1f8be94f945b8a87a71faef9c" relative="_config.php"/>
-  <line no="1">
-    <token name="T_OPEN_TAG">&lt;?php</token>
-  </line>
-  <line no="2"/>
-</source>
