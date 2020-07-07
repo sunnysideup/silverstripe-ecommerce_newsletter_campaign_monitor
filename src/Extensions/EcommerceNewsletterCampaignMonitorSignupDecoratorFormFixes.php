@@ -27,18 +27,6 @@ use SilverStripe\Control\Email\Email;
 use SilverStripe\Core\Convert;
 use SilverStripe\Core\Extension;
 
-
-
-
-
-/**
-  * ### @@@@ START REPLACEMENT @@@@ ###
-  * WHY: automated upgrade
-  * OLD:  extends Extension (ignore case)
-  * NEW:  extends Extension (COMPLEX)
-  * EXP: Check for use of $this->anyVar and replace with $this->anyVar[$this->owner->ID] or consider turning the class into a trait
-  * ### @@@@ STOP REPLACEMENT @@@@ ###
-  */
 class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extension
 {
     private static $fields_to_hide = array(
@@ -162,17 +150,8 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                         if ($newlyCreatedMember) {
                             $form->saveInto($member);
                             $member->Email = Convert::raw2sql($data["CampaignMonitorEmail"]);
-                            $member->SetPassword = true;
-
-/**
-  * ### @@@@ START REPLACEMENT @@@@ ###
-  * WHY: automated upgrade
-  * OLD: create_new_password (ignore case)
-  * NEW: create_new_password (COMPLEX)
-  * EXP: This is depracated in SS4: https://github.com/silverstripe/silverstripe-framework/commit/f16d7e1838d834575738086326d1191db3a5cfd8, consider if there is a better way to implement this functionality
-  * ### @@@@ STOP REPLACEMENT @@@@ ###
-  */
-                            $member->Password = Member::create_new_password();
+                            //$member->SetPassword = true;
+                            //$member->Password = Member::create_new_password();
                             $member->write();
                         }
                     }
