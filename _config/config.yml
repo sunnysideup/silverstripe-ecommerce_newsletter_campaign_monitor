@@ -1,7 +1,7 @@
 ---
 Name: ecommerce_newsletter_campaign_monitor
-Before: 'mysite/*'
-After: 'framework/*','cms/*','ecommerce/*'
+Before: 'app/*'
+After: ['#coreconfig', '#cmsextensions', '#ecommerce']
 ---
 OrderFormAddress:
   extensions:
