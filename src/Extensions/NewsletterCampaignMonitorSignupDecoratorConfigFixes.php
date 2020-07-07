@@ -1,5 +1,15 @@
 <?php
 
+namespace Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions;
+
+use DataExtension;
+use FieldList;
+use CampaignMonitorSignupPage;
+use DropdownField;
+use TextField;
+use LiteralField;
+
+
 
 
 /**

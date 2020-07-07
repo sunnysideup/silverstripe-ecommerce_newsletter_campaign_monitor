@@ -1,5 +1,20 @@
 <?php
 
+namespace Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions;
+
+use Extension;
+use CampaignMonitorAPIConnector;
+use FieldList;
+use Member;
+use Config;
+use Requirements;
+use EcommerceDBConfig;
+use HeaderField;
+use LiteralField;
+use CheckboxField;
+use Convert;
+
+
 
 
 /**
