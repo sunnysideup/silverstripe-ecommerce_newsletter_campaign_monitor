@@ -2,17 +2,31 @@
 
 namespace Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions;
 
-use Extension;
-use CampaignMonitorAPIConnector;
-use FieldList;
-use Member;
-use Config;
-use Requirements;
-use EcommerceDBConfig;
-use HeaderField;
-use LiteralField;
-use CheckboxField;
-use Convert;
+
+
+
+
+
+
+
+
+
+
+
+use Sunnysideup\CampaignMonitor\Api\CampaignMonitorAPIConnector;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Security\Member;
+use SilverStripe\Core\Config\Config;
+use Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions\EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes;
+use SilverStripe\View\Requirements;
+use Sunnysideup\Ecommerce\Model\Config\EcommerceDBConfig;
+use SilverStripe\Forms\HeaderField;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Control\Email\Email;
+use SilverStripe\Core\Convert;
+use SilverStripe\Core\Extension;
+
 
 
 
@@ -68,7 +82,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                     $member = new Member();
                 }
                 $signupField = $member->getCampaignMonitorSignupField($page->ListID, "SubscribeChoice");
-                $fieldsToHide = Config::inst()->get("EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes", "fields_to_hide");
+                $fieldsToHide = Config::inst()->get(EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes::class, "fields_to_hide");
                 foreach ($fieldsToHide as $field) {
                     Requirements::customCSS("#CMCustomField".$field." {display: none;}");
                 }
@@ -116,7 +130,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                     $member = Member::currentUser();
                     if (!$member) {
                         $memberAlreadyLoggedIn = false;
-                        $existingMember = Member::get()->filter(array("Email" => Convert::raw2sql($data["Email"])))->First();
+                        $existingMember = Member::get()->filter(array("Email" => Convert::raw2sql($data[Email::class])))->First();
                         //if($isSubscribe && $existingMember){
                         //$form->addErrorMessage('Email', _t("CAMPAIGNMONITORSIGNUPPAGE.EMAIL_EXISTS", "This email is already in use. Please log in for this email or try another email address."), 'warning');
                         //$this->redirectBack();

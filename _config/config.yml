@@ -3,11 +3,9 @@ Name: ecommerce_newsletter_campaign_monitor
 Before: 'app/*'
 After: ['#coreconfig', '#cmsextensions', '#ecommerce']
 ---
-OrderFormAddress:
+Sunnysideup\Ecommerce\Forms\OrderFormAddress:
   extensions:
-    - EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes
-
-EcommerceDBConfig:
+    - Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions\EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes
+Sunnysideup\Ecommerce\Model\Config\EcommerceDBConfig:
   extensions:
-    - EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes
-
+    - Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions\EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes

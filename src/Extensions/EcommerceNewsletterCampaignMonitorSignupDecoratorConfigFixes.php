@@ -2,12 +2,19 @@
 
 namespace Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions;
 
-use DataExtension;
-use FieldList;
-use CampaignMonitorSignupPage;
-use DropdownField;
-use TextField;
-use LiteralField;
+
+
+
+
+
+
+use Sunnysideup\CampaignMonitor\CampaignMonitorSignupPage;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\ORM\DataExtension;
+
 
 
 
@@ -29,7 +36,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes extends DataE
     );
 
     private static $has_one = array(
-        "CampaignMonitorSignupPage" => "CampaignMonitorSignupPage"
+        "CampaignMonitorSignupPage" => CampaignMonitorSignupPage::class
     );
 
     public function onBeforeWrite()
