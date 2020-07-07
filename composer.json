@@ -27,7 +27,5 @@
         "sunnysideup/campaignmonitor": "*",
         "silverstripe/recipe-cms": "^4.4"
     },
-    "extra": {
-        "installer-name": "ecommerce_newsletter_campaign_monitor"
-    }
+    "extra": []
 }
