@@ -1,6 +1,6 @@
 {
     "name": "sunnysideup/ecommerce_newsletter_campaign_monitor",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "description": "add a newsletter signup to your e-commerce checkout - specifically for campaign monitor newsletter module",
     "keywords": [
         "Silverstripe-CMS",
