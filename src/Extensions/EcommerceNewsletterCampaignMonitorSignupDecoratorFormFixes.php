@@ -11,6 +11,7 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\Security\Member;
+use SilverStripe\Security\Security;
 use SilverStripe\View\Requirements;
 use Sunnysideup\CampaignMonitor\Api\CampaignMonitorAPIConnector;
 use Sunnysideup\Ecommerce\Model\Config\EcommerceDBConfig;
@@ -46,7 +47,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
             $page = $this->CampaignMonitorPage();
             if ($page->ReadyToReceiveSubscribtions()) {
                 // Create fields
-                $member = Member::currentUser();
+                $member = Security::currentUser();
                 if (! $member) {
                     $member = new Member();
                 }
@@ -93,7 +94,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                     //true until proven otherwise.
                     $newlyCreatedMember = false;
                     $isSubscribe = isset($data['SubscribeChoice']) && $data['SubscribeChoice'] === 'Subscribe';
-                    $member = Member::currentUser();
+                    $member = Security::currentUser();
                     if (! $member) {
                         //$memberAlreadyLoggedIn = false;
                         $existingMember = Member::get()->filter(['Email' => Convert::raw2sql($data[Email::class])])->First();

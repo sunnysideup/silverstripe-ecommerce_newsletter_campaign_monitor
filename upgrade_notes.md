@@ -101,7 +101,7 @@ modified:	src/Extensions/NewsletterCampaignMonitorSignupDecoratorFormFixes.php
                      Requirements::customCSS("#CMCustomField".$field." {display: none;}");
                  }
 @@ -116,7 +130,7 @@
-                     $member = Member::currentUser();
+                     $member = Security::currentUser();
                      if (!$member) {
                          $memberAlreadyLoggedIn = false;
 -                        $existingMember = Member::get()->filter(array("Email" => Convert::raw2sql($data["Email"])))->First();
@@ -238,7 +238,7 @@ modified:	src/Extensions/EcommerceNewsletterCampaignMonitorSignupDecoratorFormFi
                      Requirements::customCSS("#CMCustomField".$field." {display: none;}");
                  }
 @@ -116,7 +130,7 @@
-                     $member = Member::currentUser();
+                     $member = Security::currentUser();
                      if (!$member) {
                          $memberAlreadyLoggedIn = false;
 -                        $existingMember = Member::get()->filter(array("Email" => Convert::raw2sql($data["Email"])))->First();
