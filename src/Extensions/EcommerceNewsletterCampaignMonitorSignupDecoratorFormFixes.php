@@ -47,7 +47,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
             $page = $this->CampaignMonitorPage();
             if ($page->ReadyToReceiveSubscribtions()) {
                 // Create fields
-                $member = Security::currentUser();
+                $member = Security::getCurrentUser();
                 if (! $member) {
                     $member = new Member();
                 }
@@ -94,7 +94,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                     //true until proven otherwise.
                     $newlyCreatedMember = false;
                     $isSubscribe = isset($data['SubscribeChoice']) && $data['SubscribeChoice'] === 'Subscribe';
-                    $member = Security::currentUser();
+                    $member = Security::getCurrentUser();
                     if (! $member) {
                         //$memberAlreadyLoggedIn = false;
                         $existingMember = Member::get()->filter(['Email' => Convert::raw2sql($data[Email::class])])->First();
