@@ -56,7 +56,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                 foreach ($fieldsToHide as $field) {
                     Requirements::customCSS('#CMCustomField' . $field . ' {display: none;}');
                 }
-                $config = EcommerceDBConfig::current_ecommerce_db_config();
+                $config = EcommerceConfig::inst();
                 if ($config->CampaignMonitorSignupHeader) {
                     $fields->push(new HeaderField('CampaignMonitorNewsletterSignupHeader', $config->CampaignMonitorSignupHeader, 3));
                 }
@@ -143,7 +143,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
      */
     protected function hasCampaignMonitorPage()
     {
-        $config = EcommerceDBConfig::current_ecommerce_db_config();
+        $config = EcommerceConfig::inst();
         return $config->CampaignMonitorSignupPageID ? true : false;
     }
 
@@ -153,7 +153,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
      */
     protected function campaignMonitorPage()
     {
-        $config = EcommerceDBConfig::current_ecommerce_db_config();
+        $config = EcommerceConfig::inst();
         return $config->CampaignMonitorSignupPage();
     }
 }
