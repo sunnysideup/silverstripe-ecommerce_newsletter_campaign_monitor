@@ -15,6 +15,7 @@ use SilverStripe\Security\Security;
 use SilverStripe\View\Requirements;
 use Sunnysideup\CampaignMonitor\Api\CampaignMonitorAPIConnector;
 use Sunnysideup\Ecommerce\Model\Config\EcommerceDBConfig;
+use Sunnysideup\Ecommerce\Config\EcommerceConfig;
 
 class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extension
 {
