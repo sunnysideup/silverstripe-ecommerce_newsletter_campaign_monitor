@@ -27,7 +27,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
     /**
      * @var CampaignMonitorAPIConnector
      */
-    private static $_api = null;
+    private static $_api;
 
     /**
      * @return CampaignMonitorAPIConnector
@@ -144,7 +144,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
     protected function hasCampaignMonitorPage()
     {
         $config = EcommerceConfig::inst();
-        return $config->CampaignMonitorSignupPageID ? true : false;
+        return (bool) $config->CampaignMonitorSignupPageID;
     }
 
     /**
