@@ -40,6 +40,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
             self::$_api = CampaignMonitorAPIConnector::create();
             self::$_api->init();
         }
+
         return self::$_api;
     }
 
@@ -82,9 +83,10 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
 
     /**
      * adds the user to the list ...
-     * @param array $data
-     * @param Form $form
-     * @param Order $order
+     *
+     * @param array  $data
+     * @param Form   $form
+     * @param Order  $order
      * @param Member $member
      */
     public function saveAddressExtension($data, $form, ?Order $order = null, ?Member $member = null)
@@ -95,7 +97,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                 if ($page->ReadyToReceiveSubscribtions()) {
                     //true until proven otherwise.
                     $newlyCreatedMember = false;
-                    $isSubscribe = isset($data['SubscribeChoice']) && $data['SubscribeChoice'] === 'Subscribe';
+                    $isSubscribe = isset($data['SubscribeChoice']) && 'Subscribe' === $data['SubscribeChoice'];
                     $member = Security::getCurrentUser();
                     if (! $member) {
                         //$memberAlreadyLoggedIn = false;
@@ -141,21 +143,25 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
 
     /**
      * returns ID of Mailing List that people are subscribing to.
+     *
      * @return \Sunnysideup\CampaignMonitor\CampaignMonitorSignupPage
      */
     protected function hasCampaignMonitorPage()
     {
         $config = EcommerceConfig::inst();
+
         return (bool) $config->CampaignMonitorSignupPageID;
     }
 
     /**
      * returns ID of Mailing List that people are subscribing to.
+     *
      * @return \Sunnysideup\CampaignMonitor\CampaignMonitorSignupPage
      */
     protected function campaignMonitorPage()
     {
         $config = EcommerceConfig::inst();
+
         return $config->CampaignMonitorSignupPage();
     }
 }
