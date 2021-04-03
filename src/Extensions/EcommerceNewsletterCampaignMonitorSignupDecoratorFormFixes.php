@@ -7,6 +7,7 @@ use SilverStripe\Core\Config\Config;
 use SilverStripe\Core\Convert;
 use SilverStripe\Core\Extension;
 use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\Form;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\LiteralField;
@@ -15,6 +16,7 @@ use SilverStripe\Security\Security;
 use SilverStripe\View\Requirements;
 use Sunnysideup\CampaignMonitor\Api\CampaignMonitorAPIConnector;
 use Sunnysideup\Ecommerce\Config\EcommerceConfig;
+use \Sunnysideup\Ecommerce\Model\Order;
 
 class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extension
 {
@@ -81,11 +83,11 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
     /**
      * adds the user to the list ...
      * @param array $data
-     * @param \SilverStripe\Forms\Form $form
-     * @param \Sunnysideup\Ecommerce\Model\Order $order
+     * @param Form $form
+     * @param Order $order
      * @param Member $member
      */
-    public function saveAddressExtension($data, $form, $order = null, $member = null)
+    public function saveAddressExtension($data, $form, ?Order $order = null, ?Member $member = null)
     {
         if (isset($data['CampaignMonitorNewsletterSubscribeCheckBox']) && $data['CampaignMonitorNewsletterSubscribeCheckBox']) {
             if ($this->hasCampaignMonitorPage()) {
