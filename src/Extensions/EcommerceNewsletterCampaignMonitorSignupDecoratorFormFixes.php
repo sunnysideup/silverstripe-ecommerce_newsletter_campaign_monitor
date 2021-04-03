@@ -139,7 +139,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
 
     /**
      * returns ID of Mailing List that people are subscribing to.
-     * @return \Sunnysideup\CampaignMonitor\CampaignMonitorSignUpPage
+     * @return \Sunnysideup\CampaignMonitor\CampaignMonitorSignupPage
      */
     protected function hasCampaignMonitorPage()
     {
@@ -149,7 +149,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
 
     /**
      * returns ID of Mailing List that people are subscribing to.
-     * @return \Sunnysideup\CampaignMonitor\CampaignMonitorSignUpPage
+     * @return \Sunnysideup\CampaignMonitor\CampaignMonitorSignupPage
      */
     protected function campaignMonitorPage()
     {
