@@ -7,6 +7,7 @@ use SilverStripe\Core\Config\Config;
 use SilverStripe\Core\Convert;
 use SilverStripe\Core\Extension;
 use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\CompositeField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Form;
 use SilverStripe\Forms\HeaderField;
@@ -54,6 +55,8 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                 if (! $member) {
                     $member = new Member();
                 }
+                $campaignMonitorFieldsHolder = CompositeField::create();
+                $campaignMonitorFieldsHolder->setName('CampaignMonitorFields');
                 $signupField = $member->getCampaignMonitorSignupField($page->ListID, 'SubscribeChoice');
                 $fieldsToHide = Config::inst()->get(EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes::class, 'fields_to_hide');
                 foreach ($fieldsToHide as $field) {
@@ -61,17 +64,18 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                 }
                 $config = EcommerceConfig::inst();
                 if ($config->CampaignMonitorSignupHeader) {
-                    $fields->push(new HeaderField('CampaignMonitorNewsletterSignupHeader', $config->CampaignMonitorSignupHeader, 3));
+                    $campaignMonitorFieldsHolder->push(new HeaderField('CampaignMonitorNewsletterSignupHeader', $config->CampaignMonitorSignupHeader, 3));
                 }
                 if ($config->CampaignMonitorSignupIntro) {
-                    $fields->push(new LiteralField('CampaignMonitorNewsletterSignupContent', '<p class="campaignMonitorNewsletterSignupContent">' . $config->CampaignMonitorSignupIntro . '</p>'));
+                    $campaignMonitorFieldsHolder->push(new LiteralField('CampaignMonitorNewsletterSignupContent', '<p class="campaignMonitorNewsletterSignupContent">' . $config->CampaignMonitorSignupIntro . '</p>'));
                 }
                 $label = $config->CampaignMonitorSignupLabel;
                 if (! $label) {
                     $label = _t('EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes.JOIN', 'Join');
                 }
-                $fields->push(new CheckboxField('CampaignMonitorNewsletterSubscribeCheckBox', $label));
-                $fields->push($signupField);
+                $campaignMonitorFieldsHolder->push(new CheckboxField('CampaignMonitorNewsletterSubscribeCheckBox', $label));
+                $campaignMonitorFieldsHolder->push($signupField);
+                $fields->push($campaignMonitorFieldsHolder);
                 Requirements::customCSS('
                     #SubscribeChoice {display: none!important;}
                     .CMFieldsCustomFieldsHolder {display: none!important;}
