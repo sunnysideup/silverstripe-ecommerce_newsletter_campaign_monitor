@@ -33,7 +33,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes extends DataE
     public function updateCMSFields(FieldList $fields)
     {
         $lists = CampaignMonitorSignupPage::get_ready_ones();
-        if ($lists && $lists->count()) {
+        if ($lists->exists()) {
             $options = [0 => _t('EcommerceNewsletterCampaignMonitorSignup.PLEASE_SELECT', '-- please select --')] + $lists->map()->toArray();
             if ($this->owner->CampaignMonitorSignupPageID) {
                 $fields->addFieldsToTab(
