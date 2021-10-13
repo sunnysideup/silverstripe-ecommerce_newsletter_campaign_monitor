@@ -23,10 +23,10 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes extends DataE
 
     public function onBeforeWrite()
     {
-        if (! $this->owner->CampaignMonitorSignupPageID) {
-            $this->owner->CampaignMonitorSignupHeader = '';
-            $this->owner->CampaignMonitorSignupIntro = '';
-            $this->owner->CampaignMonitorSignupLabel = '';
+        if (! $this->getOwner()->CampaignMonitorSignupPageID) {
+            $this->getOwner()->CampaignMonitorSignupHeader = '';
+            $this->getOwner()->CampaignMonitorSignupIntro = '';
+            $this->getOwner()->CampaignMonitorSignupLabel = '';
         }
     }
 
@@ -35,7 +35,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes extends DataE
         $lists = CampaignMonitorSignupPage::get_ready_ones();
         if ($lists->exists()) {
             $options = [0 => _t('EcommerceNewsletterCampaignMonitorSignup.PLEASE_SELECT', '-- please select --')] + $lists->map()->toArray();
-            if ($this->owner->CampaignMonitorSignupPageID) {
+            if ($this->getOwner()->CampaignMonitorSignupPageID) {
                 $fields->addFieldsToTab(
                     'Root.Newsletter',
                     [
