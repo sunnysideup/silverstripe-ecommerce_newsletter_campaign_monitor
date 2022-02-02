@@ -69,8 +69,8 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes extends DataE
                     new LiteralField(
                         'ListExplanation',
                         '<p class="message warning">
-						' . _t('EcommerceNewsletterCampaignMonitorSignup.RECOMMENDATION_TO_SETUP', 'It is recommended you set up a Campaign Monitor Page with a valid list to subscribe to.') . '
-						</p>'
+                        ' . _t('EcommerceNewsletterCampaignMonitorSignup.RECOMMENDATION_TO_SETUP', 'It is recommended you set up a Campaign Monitor Page with a valid list to subscribe to.') . '
+                        </p>'
                     ),
                     new TextField('CampaignMonitorSignupHeader', _t('EcommerceNewsletterCampaignMonitorSignup.HEADER', 'Header')),
                     new TextField('CampaignMonitorSignupIntro', _t('EcommerceNewsletterCampaignMonitorSignup.INTRO', 'Intro')),

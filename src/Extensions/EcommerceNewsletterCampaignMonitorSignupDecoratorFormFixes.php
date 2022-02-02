@@ -120,9 +120,9 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                     //logged in: if the member already as someone else then you can't sign up.
                     //$memberAlreadyLoggedIn = true;
                     //$existingMember = Member::get()
-                    //	->filter(array("Email" => Convert::raw2sql($data["CampaignMonitorEmail"])))
-                    //	->exclude(array("ID" => $member->ID))
-                    //	->First();
+                    //    ->filter(array("Email" => Convert::raw2sql($data["CampaignMonitorEmail"])))
+                    //    ->exclude(array("ID" => $member->ID))
+                    //    ->First();
                     //if($isSubscribe && $existingMember) {
                     //$form->addErrorMessage('CampaignMonitorEmail', _t("CAMPAIGNMONITORSIGNUPPAGE.EMAIL_EXISTS", "This email is already in use by someone else. Please log in for this email or try another email address."), 'warning');
                     //$this->redirectBack();
