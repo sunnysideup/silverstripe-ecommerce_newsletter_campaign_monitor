@@ -134,7 +134,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                     if ($isSubscribe) {
                         if ($newlyCreatedMember) {
                             $form->saveInto($member);
-                            $member->Email = Convert::raw2sql($data['CampaignMonitorEmail']);
+                            $member->Email = Convert::raw2sql($data['Email']);
                             //$member->SetPassword = true;
                             //$member->Password = Member::create_new_password();
                             $member->write();
