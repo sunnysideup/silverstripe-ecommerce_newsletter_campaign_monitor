@@ -104,8 +104,9 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                     $isSubscribe = isset($data['SubscribeChoice']) && 'Subscribe' === $data['SubscribeChoice'];
                     $member = Security::getCurrentUser();
                     if (! $member) {
+                        $myEmail = $data['Email'] ?? rand(0,99999);
                         //$memberAlreadyLoggedIn = false;
-                        $existingMember = Member::get()->filter(['Email' => Convert::raw2sql($data[Email::class])])->First();
+                        $existingMember = Member::get()->filter(['Email' => Convert::raw2sql($myEmail)])->First();
                         //if($isSubscribe && $existingMember){
                         //$form->addErrorMessage('Email', _t("CAMPAIGNMONITORSIGNUPPAGE.EMAIL_EXISTS", "This email is already in use. Please log in for this email or try another email address."), 'warning');
                         //$this->redirectBack();
