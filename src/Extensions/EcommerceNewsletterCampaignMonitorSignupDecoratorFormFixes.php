@@ -16,6 +16,7 @@ use SilverStripe\Security\Member;
 use SilverStripe\Security\Security;
 use SilverStripe\View\Requirements;
 use Sunnysideup\CampaignMonitor\Api\CampaignMonitorAPIConnector;
+use Sunnysideup\CampaignMonitor\Api\CampaignMonitorSignupFieldProvider;
 use Sunnysideup\Ecommerce\Config\EcommerceConfig;
 use Sunnysideup\Ecommerce\Model\Order;
 
@@ -140,7 +141,9 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                             $member->write();
                         }
                     }
-                    $member->processCampaignMonitorSignupField($page, $data, $form);
+                    $fieldName = Config::inst()->get(CampaignMonitorSignupFieldProvider::class, 'campaign_monitor_signup_fieldname');
+                    $values = $data[$fieldName] ?? 'error';
+                    $member->processCampaignMonitorSignupField($page, $data, $values);
                 }
             }
         }
