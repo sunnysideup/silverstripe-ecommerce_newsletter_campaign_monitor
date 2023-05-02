@@ -20,6 +20,11 @@ use Sunnysideup\CampaignMonitor\Api\CampaignMonitorSignupFieldProvider;
 use Sunnysideup\Ecommerce\Config\EcommerceConfig;
 use Sunnysideup\Ecommerce\Model\Order;
 
+/**
+ * Class \Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions\EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes
+ *
+ * @property \Sunnysideup\Ecommerce\Forms\OrderFormAddress|\Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions\EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes $owner
+ */
 class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extension
 {
     private static $fields_to_hide = [

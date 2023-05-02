@@ -9,6 +9,16 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataExtension;
 use Sunnysideup\CampaignMonitor\CampaignMonitorSignupPage;
 
+/**
+ * Class \Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions\EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes
+ *
+ * @property \Sunnysideup\Ecommerce\Model\Config\EcommerceDBConfig|\Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions\EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes $owner
+ * @property string $CampaignMonitorSignupHeader
+ * @property string $CampaignMonitorSignupIntro
+ * @property string $CampaignMonitorSignupLabel
+ * @property int $CampaignMonitorSignupPageID
+ * @method \Sunnysideup\CampaignMonitor\CampaignMonitorSignupPage CampaignMonitorSignupPage()
+ */
 class EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes extends DataExtension
 {
     private static $db = [
