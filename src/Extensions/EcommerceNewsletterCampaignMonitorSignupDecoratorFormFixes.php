@@ -86,7 +86,16 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                     #SubscribeChoice {display: none!important;}
                     .CMFieldsCustomFieldsHolder {display: none!important;}
                 ');
-                Requirements::customScript('jQuery("#CampaignMonitorNewsletterSubscribeCheckBox").on("change", function(){jQuery(".CMFieldsCustomFieldsHolder").slideToggle();});');
+                Requirements::customScript('
+                window.document.addEventListener(\'DOMContentLoaded\', () => {
+                    window.document.querySelector(\'input[name="CampaignMonitorNewsletterSubscribeCheckBox"]\').addEventListener(\'change\', () => {
+                        const cmFields = window.document.querySelector(\'.CMFieldsCustomFieldsHolder\');
+                        cmFields.style.display = (cmFields.style.display === \'none\' ? \'\' : \'none\');
+                    });
+                });
+
+
+                ');
             }
         }
     }
@@ -110,7 +119,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                     $isSubscribe = isset($data['SubscribeChoice']) && 'Subscribe' === $data['SubscribeChoice'];
                     $member = Security::getCurrentUser();
                     if (! $member) {
-                        $myEmail = $data['Email'] ?? rand(0,99999);
+                        $myEmail = $data['Email'] ?? rand(0, 99999);
                         //$memberAlreadyLoggedIn = false;
                         $existingMember = Member::get()->filter(['Email' => Convert::raw2sql($myEmail)])->First();
                         //if($isSubscribe && $existingMember){
