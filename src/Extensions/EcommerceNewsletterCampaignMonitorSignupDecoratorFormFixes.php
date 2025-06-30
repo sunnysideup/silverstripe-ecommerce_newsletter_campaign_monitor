@@ -70,7 +70,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                 }
                 $config = EcommerceConfig::inst();
                 if ($config->CampaignMonitorSignupHeader) {
-                    $campaignMonitorFieldsHolder->push(new HeaderField('CampaignMonitorNewsletterSignupHeader', $config->CampaignMonitorSignupHeader, 3));
+                    $campaignMonitorFieldsHolder->push(new HeaderField('CampaignMonitorNewsletterSignupHeader', $config->CampaignMonitorSignupHeader, 2));
                 }
                 if ($config->CampaignMonitorSignupIntro) {
                     $campaignMonitorFieldsHolder->push(new LiteralField('CampaignMonitorNewsletterSignupContent', '<p class="campaignMonitorNewsletterSignupContent">' . $config->CampaignMonitorSignupIntro . '</p>'));
