@@ -119,7 +119,7 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                     $isSubscribe = isset($data['SubscribeChoice']) && 'Subscribe' === $data['SubscribeChoice'];
                     $member = Security::getCurrentUser();
                     if (! $member) {
-                        $myEmail = $data['Email'] ?? rand(0, 99999);
+                        $myEmail = $data['Email'] ?? rand();
                         //$memberAlreadyLoggedIn = false;
                         $existingMember = Member::get()->filter(['Email' => Convert::raw2sql($myEmail)])->First();
                         //if($isSubscribe && $existingMember){
