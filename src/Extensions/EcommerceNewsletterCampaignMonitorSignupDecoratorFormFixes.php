@@ -61,8 +61,9 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                 if (! $member) {
                     $member = new Member();
                 }
-                $campaignMonitorFieldsHolder = CompositeField::create();
-                $campaignMonitorFieldsHolder->setName('CampaignMonitorFields');
+                $campaignMonitorFieldsHolder = CompositeField::create()
+                    ->setName('CampaignMonitorFields')
+                    ->addExtraClass('campaignMonitorFieldsHolder');
                 $signupField = $member->getCampaignMonitorSignupField($page->ListID, 'SubscribeChoice');
                 $fieldsToHide = Config::inst()->get(EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes::class, 'fields_to_hide');
                 foreach ($fieldsToHide as $field) {
