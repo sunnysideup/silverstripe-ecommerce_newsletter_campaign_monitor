@@ -1,4 +1,4 @@
-SilverStripe\ORM\DatabaseAdmin:
+SilverStripe\Dev\DbBuild:
   classname_value_remapping:
     EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes: Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions\EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes
     EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes: Sunnysideup\EcommerceNewsletterCampaignMonitor\Extensions\EcommerceNewsletterCampaignMonitorSignupDecoratorConfigFixes
