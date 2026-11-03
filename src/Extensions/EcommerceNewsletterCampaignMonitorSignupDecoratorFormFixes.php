@@ -128,11 +128,14 @@ class EcommerceNewsletterCampaignMonitorSignupDecoratorFormFixes extends Extensi
                         //$this->redirectBack();
                         //return;
                         //}
-                        $member = $existingMember;
-                        if (! $member) {
-                            $newlyCreatedMember = true;
-                            $member = new Member();
+                        if ($existingMember) {
+                            // The email address typed in at the checkout has not been verified.
+                            // We never change the newsletter settings of an existing customer for somebody who has not logged in,
+                            // otherwise anyone can (un)subscribe a customer, or change their details, by typing in their email address.
+                            return;
                         }
+                        $newlyCreatedMember = true;
+                        $member = new Member();
                     }
                     //logged in: if the member already as someone else then you can't sign up.
                     //$memberAlreadyLoggedIn = true;
